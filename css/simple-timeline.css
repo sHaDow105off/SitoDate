@@ -1,0 +1,214 @@
+/* Stili per la timeline semplice */
+
+/* Container della timeline */
+.timeline-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Titolo della timeline */
+.timeline-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Timeline principale */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+/* Linea centrale */
+.timeline-line {
+  position: absolute;
+  width: 2px;
+  background-color: #ccc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Eventi sopra la linea */
+.timeline-event-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-event-top .event-box {
+  margin-left: calc(50% - 35px);
+  position: relative;
+}
+
+.timeline-event-top .event-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: #ccc;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.timeline-event-top .event-content {
+  padding-left: 20px;
+  text-align: left;
+  max-width: calc(50% - 50px);
+}
+
+/* Eventi sotto la linea */
+.timeline-event-bottom {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-event-bottom .event-box {
+  margin-right: calc(50% - 35px);
+  position: relative;
+}
+
+.timeline-event-bottom .event-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: #ccc;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+}
+
+.timeline-event-bottom .event-content {
+  padding-right: 20px;
+  text-align: right;
+  max-width: calc(50% - 50px);
+}
+
+/* Box colorati per gli anni */
+.event-box {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Colori dei box */
+.event-box.blue {
+  background-color: #4361ee;
+}
+
+.event-box.pink {
+  background-color: #f72585;
+}
+
+.event-box.yellow {
+  background-color: #ffd60a;
+}
+
+/* Anno all'interno del box */
+.year {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+.event-box.yellow .year {
+  color: #333;
+}
+
+/* Contenuto dell'evento */
+.event-content {
+  margin: 0;
+}
+
+.event-title {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.event-description {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+
+/* Posizionamento degli eventi */
+.timeline-event-top:nth-of-type(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.timeline-event-top:nth-of-type(2) {
+  position: absolute;
+  top: 200px;
+  left: 0;
+}
+
+.timeline-event-top:nth-of-type(3) {
+  position: absolute;
+  top: 400px;
+  left: 0;
+}
+
+.timeline-event-bottom:nth-of-type(1) {
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
+.timeline-event-bottom:nth-of-type(2) {
+  position: absolute;
+  top: 300px;
+  left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 35px;
+  }
+  
+  .timeline-event-top,
+  .timeline-event-bottom {
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .timeline-event-top .event-box,
+  .timeline-event-bottom .event-box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .timeline-event-top .event-content,
+  .timeline-event-bottom .event-content {
+    padding-left: 20px;
+    padding-right: 0;
+    text-align: left;
+    max-width: calc(100% - 90px);
+  }
+}
