@@ -1,3 +1,6 @@
+
+![Screenshot 2025-06-13 163200](https://github.com/user-attachments/assets/514f8e53-391a-4392-bfb6-eac593af39c2)
+
 # 📜 Sito‑Date
 
 Un’applicazione web didattica per esplorare la Storia moderna (1600–1900) attraverso una timeline interattiva, schemi cronologici e quiz.
